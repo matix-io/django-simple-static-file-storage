@@ -22,3 +22,21 @@ import simple_static_file_storage
 simple_static_file_storage.configure(YOUR_API_KEY)
 from simple_static_file_storage import * # yes, this 2nd import is required
 ```
+
+## Amazon Bucket Policy
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::YOUR-BUCKET",
+                "arn:aws:s3:::YOUR-BUCKET/*"
+            ]
+        }
+    ]
+}
+```
